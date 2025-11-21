@@ -14,45 +14,36 @@ class Bottomnavigation extends StatefulWidget {
 }
 
 class _BottomnavigationState extends State<Bottomnavigation> {
-  List Screens = [ Homescreen(),
-  FolderScreen(),
+  List Screens = [
+    Homescreen(),
+    FolderScreen(),
     Deletescreen(),
-    Settingsscreen()
-
+    Settingsscreen(),
   ];
-
 
   int selectIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-
-
       body: Screens[selectIndex],
-
 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectIndex,
-        onTap: (v){
-          setState(() {
-
-          });
+        onTap: (v) {
+          setState(() {});
           log("===4v");
           setState(() {
             selectIndex = v;
           });
-
         },
 
         selectedItemColor: Colors.green,
         unselectedItemColor: Colors.grey,
-        backgroundColor:Colors.white30,
+        backgroundColor: Colors.white30,
 
         //selectedIconTheme: IconThemeData(color: Colors.black),
         //unselectedIconTheme: IconThemeData(color: Colors.black),
-
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.folder), label: " Folder"),
