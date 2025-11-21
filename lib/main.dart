@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'Notes.dart';
-import 'View/SplashScreen.dart';
+import 'View/BottomBar/BottomNavigation.dart';
+
+import 'View/SplashScreen/SplashScreen.dart';
 void main () {
   runApp(MyApp());
 }
