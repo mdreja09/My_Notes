@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Notes.dart';
+import 'View/SplashScreen.dart';
 void main () {
   runApp(MyApp());
 }
@@ -15,8 +16,10 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Notes(),
+
+        body: Splashscreen(),
       ),
     );
   }
