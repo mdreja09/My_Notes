@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'Notes.dart';
 import 'View/BottomBar/BottomNavigation.dart';
-
+import 'View/Notes/NotesScreen.dart';
 import 'View/SplashScreen/SplashScreen.dart';
+
+
+
 void main () {
   runApp(MyApp());
 }
@@ -21,7 +23,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
 
-        body: Splashscreen(),
+        body: NotesScreen(),
       ),
     );
   }

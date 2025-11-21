@@ -3,8 +3,10 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:notes/View/Delete/DeleteScreen.dart';
 import 'package:notes/View/Folder/FolderScreen.dart';
-import 'package:notes/View/Home/HomeScreen.dart';
+
 import 'package:notes/View/Settings/SettingsScreen.dart';
+
+import '../Notes/NotesScreen.dart';
 
 class Bottomnavigation extends StatefulWidget {
   const Bottomnavigation({super.key});
@@ -15,10 +17,11 @@ class Bottomnavigation extends StatefulWidget {
 
 class _BottomnavigationState extends State<Bottomnavigation> {
   List Screens = [
-    Homescreen(),
+  
     FolderScreen(),
     Deletescreen(),
     Settingsscreen(),
+    NotesScreen(),
   ];
 
   int selectIndex = 0;
@@ -42,10 +45,10 @@ class _BottomnavigationState extends State<Bottomnavigation> {
         unselectedItemColor: Colors.grey,
         backgroundColor: Colors.white30,
 
-        //selectedIconTheme: IconThemeData(color: Colors.black),
-        //unselectedIconTheme: IconThemeData(color: Colors.black),
+        selectedIconTheme: IconThemeData(color: Colors.black),
+        unselectedIconTheme: IconThemeData(color: Colors.black),
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.event_note_sharp), label: "Notes"),
           BottomNavigationBarItem(icon: Icon(Icons.folder), label: " Folder"),
           BottomNavigationBarItem(icon: Icon(Icons.delete), label: "Trash"),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Setting"),
@@ -54,3 +57,4 @@ class _BottomnavigationState extends State<Bottomnavigation> {
     );
   }
 }
+
