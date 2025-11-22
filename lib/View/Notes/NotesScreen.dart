@@ -11,10 +11,49 @@ class _NotesScreenState extends State<NotesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( 
-        leading: Drawer(backgroundColor: Colors.grey,),
-        title: Text("Notes",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 22),),
-      ),
+        drawer: Drawer(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(20),
+                color: Colors.blue,
+                child: Text(
+                  "Menu",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+
+              ListTile(
+                leading: Icon(Icons.home),
+                title: Text("Home"),
+                onTap: () {},
+              ),
+
+              ListTile(
+                leading: Icon(Icons.person),
+                title: Text("Profile"),
+                onTap: () {},
+              ),
+
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text("Settings"),
+                onTap: () {},
+              ),
+            ],
+          ),
+        ),
+
+        appBar: AppBar( backgroundColor: Colors.grey,
+
+          centerTitle: true,
+          title: Text("Notes"),),
     );
   }
 }
