@@ -10,7 +10,10 @@ class _DeletescreenState extends State<Deletescreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("TrashFile"),),
       body: Text("DeleteScreen"),
     );
   }

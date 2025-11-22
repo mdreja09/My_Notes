@@ -16,12 +16,14 @@ class Bottomnavigation extends StatefulWidget {
 }
 
 class _BottomnavigationState extends State<Bottomnavigation> {
+
   List Screens = [
-  
-    FolderScreen(),
-    Deletescreen(),
-    Settingsscreen(),
+
     NotesScreen(),
+    FolderScreen(),
+    //Deletescreen(),
+    //Settingsscreen(),
+
   ];
 
   int selectIndex = 0;
@@ -29,6 +31,7 @@ class _BottomnavigationState extends State<Bottomnavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: Screens[selectIndex],
 
       bottomNavigationBar: BottomNavigationBar(
@@ -45,13 +48,14 @@ class _BottomnavigationState extends State<Bottomnavigation> {
         unselectedItemColor: Colors.grey,
         backgroundColor: Colors.white30,
 
-        selectedIconTheme: IconThemeData(color: Colors.black),
-        unselectedIconTheme: IconThemeData(color: Colors.black),
+
+        //selectedIconTheme: IconThemeData(color: Colors.black),
+        //unselectedIconTheme: IconThemeData(color: Colors.black),
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.event_note_sharp), label: "Notes"),
-          BottomNavigationBarItem(icon: Icon(Icons.folder), label: " Folder"),
-          BottomNavigationBarItem(icon: Icon(Icons.delete), label: "Trash"),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Setting"),
+          BottomNavigationBarItem(icon: Icon(Icons.task_outlined), label: " Tasks"),
+         // BottomNavigationBarItem(icon: Icon(Icons.delete), label: "Trash"),
+         // BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Setting"),
         ],
       ),
     );

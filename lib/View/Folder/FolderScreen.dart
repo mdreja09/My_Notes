@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class FolderScreen extends StatefulWidget {
   const FolderScreen({super.key});
 
@@ -10,8 +11,21 @@ class _DeletescreenState extends State<FolderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
-      body: Text("FolderScreen"),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        centerTitle: true,
+
+        title: Text(
+          "Folder",
+          style: TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
+        ),
+      ),
+      body: Center(
+        child: Text(
+          "FolderScreen",
+          style: TextStyle(fontWeight: FontWeight.w700, fontSize: 33),
+        ),
+      ),
     );
   }
 }
