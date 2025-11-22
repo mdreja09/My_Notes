@@ -67,13 +67,18 @@ class _NotesScreenState extends State<NotesScreen> {
         width: double.infinity,
         margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         child: Column(
+          //mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Text("Notes",style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700),),
+
             //Divider(thickness: 3, color: Colors.grey.withOpacity(0.6)),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: Row(
                 spacing: 20,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                 children: [
                   Expanded(
                     child: TextField(
