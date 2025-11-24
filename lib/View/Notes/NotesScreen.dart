@@ -70,7 +70,11 @@ class _NotesScreenState extends State<NotesScreen> {
           //mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Notes",style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700),),
+            
+            Text(
+              "Notes",
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+            ),
 
             //Divider(thickness: 3, color: Colors.grey.withOpacity(0.6)),
             Padding(
@@ -105,8 +109,18 @@ class _NotesScreenState extends State<NotesScreen> {
                 ],
               ),
             ),
+            ElevatedButton(
+              onPressed: () {
+                print("Button Clicked!");
+              },
+              child: Icon(Icons.add,color: Colors.yellow,size: 30,),
+            )
+
+
+
           ],
         ),
+
       ),
     );
   }

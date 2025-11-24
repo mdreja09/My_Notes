@@ -2,9 +2,9 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:notes/View/Delete/DeleteScreen.dart';
-import 'package:notes/View/Folder/FolderScreen.dart';
 
 import 'package:notes/View/Settings/SettingsScreen.dart';
+import 'package:notes/View/TrustScreen/TrustScreen.dart';
 
 import '../Notes/NotesScreen.dart';
 
@@ -16,11 +16,11 @@ class Bottomnavigation extends StatefulWidget {
 }
 
 class _BottomnavigationState extends State<Bottomnavigation> {
-
   List Screens = [
-
     NotesScreen(),
-    FolderScreen(),
+   Trustscreen()
+
+
     //Deletescreen(),
     //Settingsscreen(),
 
@@ -31,7 +31,6 @@ class _BottomnavigationState extends State<Bottomnavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Screens[selectIndex],
 
       bottomNavigationBar: BottomNavigationBar(
@@ -48,17 +47,18 @@ class _BottomnavigationState extends State<Bottomnavigation> {
         unselectedItemColor: Colors.grey,
         backgroundColor: Colors.white30,
 
-
         //selectedIconTheme: IconThemeData(color: Colors.black),
         //unselectedIconTheme: IconThemeData(color: Colors.black),
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.event_note_sharp), label: "Notes"),
-          BottomNavigationBarItem(icon: Icon(Icons.task_outlined), label: " Tasks"),
-         // BottomNavigationBarItem(icon: Icon(Icons.delete), label: "Trash"),
-         // BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Setting"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.event_note_sharp),
+            label: "Notes",
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.delete), label: " Trust"),
+          // BottomNavigationBarItem(icon: Icon(Icons.delete), label: "Trash"),
+          // BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Setting"),
         ],
       ),
     );
   }
 }
-
