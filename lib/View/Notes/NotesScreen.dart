@@ -62,15 +62,12 @@ class _NotesScreenState extends State<NotesScreen> {
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
         ),
       ),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
             Text(
               "Notes",
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
@@ -109,18 +106,40 @@ class _NotesScreenState extends State<NotesScreen> {
                 ],
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                print("Button Clicked!");
-              },
-              child: Icon(Icons.add,color: Colors.yellow,size: 30,),
-            )
+            SizedBox(height: 30),
 
+            ListTile(
+              trailing: Text(
+                "11:50",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              ),
+              shape: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
 
+              tileColor: Colors.white,
 
+              //focusColor: Colors.grey,
+              title: Text(
+                "My name is Reja",
+                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
+              ),
+
+              subtitle: Text(
+                "Please see your identification",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              ),
+            ),
+
+            Text("data"),
           ],
         ),
+      ),
 
+      floatingActionButton: CircleAvatar(
+        radius: 30,
+        backgroundColor: Colors.amber,
+        child: Icon(Icons.add, size: 40, color: Colors.white),
       ),
     );
   }
