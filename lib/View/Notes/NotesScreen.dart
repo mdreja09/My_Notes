@@ -109,6 +109,7 @@ class _NotesScreenState extends State<NotesScreen> {
             Expanded(
 
               child: ListView.builder(
+
                 itemCount: NotesData.list.length,
                 shrinkWrap: true,
                 itemBuilder: (context,index)=>NoteCardWidget(index: index,),),

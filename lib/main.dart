@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'View/BottomBar/BottomNavigation.dart';
 import 'View/Notes/NotesScreen.dart';
 import 'View/SplashScreen/SplashScreen.dart';
-import 'View/textadd/titleadd.dart';
+import 'View/textadd/edittext.dart';
+
 
 
 
@@ -24,7 +25,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
 
-        body: Splashscreen(),
+        body: Edittext(),
 
 
       ),
