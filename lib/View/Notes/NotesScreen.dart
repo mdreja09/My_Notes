@@ -1,6 +1,10 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:notes/Database/notes.dart';
+
+import 'Widget/SearchFieldWidget.dart';
+import 'Widget/note_card.dart';
 
 class NotesScreen extends StatefulWidget {
   const NotesScreen({super.key});
@@ -84,21 +88,7 @@ class _NotesScreenState extends State<NotesScreen> {
 
                 children: [
                   Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        fillColor: Colors.white,
-                        filled: true,
-
-                        prefixIcon: Icon(Icons.search),
-                        suffixIcon: Icon(Icons.mic),
-                        hintText: "Search Notes",
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-
-                          borderRadius: BorderRadius.circular(23),
-                        ),
-                      ),
-                    ),
+                    child: SearchFieldWidget(),
                   ),
 
                   Container(
@@ -115,47 +105,14 @@ class _NotesScreenState extends State<NotesScreen> {
             ),
             SizedBox(height: 10),
 
-            ListView.builder(
-              itemCount: 5,
-              shrinkWrap: true,
-              itemBuilder: (context,index)=>Card(
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Column(
-                  spacing: 5,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "This is a Notes apps ",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18,
-                          ),
-                        ),
-                        Text(
-                          "Nov 17 2025, 9:29 PM ",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      "just only for demo seen saw the card ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 17,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),)
+            Expanded(
+
+              child: ListView.builder(
+                itemCount: NotesData.list.length,
+                shrinkWrap: true,
+                itemBuilder: (context,index)=>CardNotes(),),
+
+            )
           ],
         ),
       ),
@@ -173,3 +130,6 @@ class _NotesScreenState extends State<NotesScreen> {
     );
   }
 }
+
+
+
