@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class NotesScreen extends StatefulWidget {
@@ -13,7 +15,7 @@ class _NotesScreenState extends State<NotesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xffF7F7F7),
       drawer: Drawer(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +56,7 @@ class _NotesScreenState extends State<NotesScreen> {
       ),
 
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.white,
 
         centerTitle: true,
         title: Text(
@@ -84,10 +86,15 @@ class _NotesScreenState extends State<NotesScreen> {
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
+
                         prefixIcon: Icon(Icons.search),
                         suffixIcon: Icon(Icons.mic),
                         hintText: "Search Notes",
                         border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+
                           borderRadius: BorderRadius.circular(23),
                         ),
                       ),
@@ -106,40 +113,62 @@ class _NotesScreenState extends State<NotesScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 10),
 
-            ListTile(
-              trailing: Text(
-                "11:50",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            ListView.builder(
+              itemCount: 5,
+              shrinkWrap: true,
+              itemBuilder: (context,index)=>Card(
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  spacing: 5,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "This is a Notes apps ",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                          ),
+                        ),
+                        Text(
+                          "Nov 17 2025, 9:29 PM ",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      "just only for demo seen saw the card ",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 17,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              shape: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-
-              tileColor: Colors.white,
-
-              //focusColor: Colors.grey,
-              title: Text(
-                "My name is Reja",
-                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
-              ),
-
-              subtitle: Text(
-                "Please see your identification",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-              ),
-            ),
-
-            Text("data"),
+            ),)
           ],
         ),
       ),
 
-      floatingActionButton: CircleAvatar(
-        radius: 30,
-        backgroundColor: Colors.amber,
-        child: Icon(Icons.add, size: 40, color: Colors.white),
+      floatingActionButton: InkWell(
+        onTap: () {
+          log("=========");
+        },
+        child: CircleAvatar(
+          radius: 30,
+          backgroundColor: Colors.amber,
+          child: Icon(Icons.add, size: 40, color: Colors.white),
+        ),
       ),
     );
   }

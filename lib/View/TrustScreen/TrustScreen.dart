@@ -24,16 +24,33 @@ class _DeletescreenState extends State<Trustscreen> {
         height: double.infinity,
         width: double.infinity,
         margin: EdgeInsets.symmetric(horizontal: 16,vertical: 16),
-        child: TextField(
-          decoration: InputDecoration(
-           // prefixIcon: Icon(Icons.search),
-            //suffixIcon: Icon(Icons.mic),
-            //hintText: "Search Notes",
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+        child: Column(
+          children: [
+            TextField(
+              decoration: InputDecoration(
+               // prefixIcon: Icon(Icons.search),
+                //suffixIcon: Icon(Icons.mic),
+                //hintText: "Search Notes",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
             ),
-          ),
+            SizedBox(height: 20,),
+            TextField(
+              decoration: InputDecoration(
+                // prefixIcon: Icon(Icons.search),
+                //suffixIcon: Icon(Icons.mic),
+                //hintText: "Search Notes",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+            ),
+
+          ],
         ),
+
       ),
     );
   }
