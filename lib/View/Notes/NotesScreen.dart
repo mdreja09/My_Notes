@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:notes/Database/notes.dart';
 
 import 'Widget/SearchFieldWidget.dart';
+import 'Widget/cardwidget.dart';
 import 'Widget/note_card.dart';
 
 class NotesScreen extends StatefulWidget {
@@ -110,7 +111,7 @@ class _NotesScreenState extends State<NotesScreen> {
               child: ListView.builder(
                 itemCount: NotesData.list.length,
                 shrinkWrap: true,
-                itemBuilder: (context,index)=>CardNotes(),),
+                itemBuilder: (context,index)=>NoteCardWidget(index: index,),),
 
             )
           ],
@@ -130,6 +131,8 @@ class _NotesScreenState extends State<NotesScreen> {
     );
   }
 }
+
+
 
 
 

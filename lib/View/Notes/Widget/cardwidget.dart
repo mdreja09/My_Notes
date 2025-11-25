@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:notes/Database/notes.dart';
-class CardNotes extends StatefulWidget {
-  const CardNotes({
-    super.key,
+
+import '../../../Database/notes.dart';
+
+class NoteCardWidget extends StatelessWidget {
+  const NoteCardWidget({
+    super.key, required this.index,
   });
+  final int index ;
 
-  @override
-  State<CardNotes> createState() => _CardNotesState();
-}
-
-class _CardNotesState extends State<CardNotes> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -24,14 +22,14 @@ class _CardNotesState extends State<CardNotes> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "${NotesData.list[0]["title"]}",
+                  "${NotesData.list[index]["title"]}",
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 18,
                   ),
                 ),
                 Text(
-                  "${NotesData.list[0]["created_at"]}",
+                  "${NotesData.list[index]["created_at"]}",
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 18,
@@ -40,7 +38,7 @@ class _CardNotesState extends State<CardNotes> {
               ],
             ),
             Text(
-              "${NotesData.list[0]["details"]} ",
+              "${NotesData.list[index]["details"]} ",
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 17,
