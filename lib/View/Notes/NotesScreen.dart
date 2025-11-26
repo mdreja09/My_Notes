@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:notes/Database/notes.dart';
 
+import '../textadd/add_text.dart';
 import 'Widget/SearchFieldWidget.dart';
 import 'Widget/cardwidget.dart';
 import 'Widget/note_card.dart';
@@ -88,9 +89,7 @@ class _NotesScreenState extends State<NotesScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                 children: [
-                  Expanded(
-                    child: SearchFieldWidget(),
-                  ),
+                  Expanded(child: SearchFieldWidget()),
 
                   Container(
                     height: 45,
@@ -107,14 +106,12 @@ class _NotesScreenState extends State<NotesScreen> {
             SizedBox(height: 10),
 
             Expanded(
-
               child: ListView.builder(
-
                 itemCount: NotesData.list.length,
                 shrinkWrap: true,
-                itemBuilder: (context,index)=>NoteCardWidget(index: index,),),
-
-            )
+                itemBuilder: (context, index) => NoteCardWidget(index: index),
+              ),
+            ),
           ],
         ),
       ),
@@ -122,6 +119,12 @@ class _NotesScreenState extends State<NotesScreen> {
       floatingActionButton: InkWell(
         onTap: () {
           log("=========");
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Edittext()),
+          ).then(((c) {
+            setState(() {});
+          }));
         },
         child: CircleAvatar(
           radius: 30,
@@ -132,8 +135,3 @@ class _NotesScreenState extends State<NotesScreen> {
     );
   }
 }
-
-
-
-
-
