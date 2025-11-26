@@ -109,7 +109,64 @@ class _NotesScreenState extends State<NotesScreen> {
               child: ListView.builder(
                 itemCount: NotesData.list.length,
                 shrinkWrap: true,
-                itemBuilder: (context, index) => NoteCardWidget(index: index),
+                itemBuilder: (context, index) => InkWell(
+                  onLongPress: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: Text(
+                            "Confomation",
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          content: Text(
+                            "Are you sure you want to delete this note",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18,
+                            ),
+                          ),
+                          actions: [
+                            InkWell(
+                              onTap: () {
+                                Navigator.pop(context);
+                                log("message");
+                              },
+
+                              child: Text(
+                                "Cencel",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 23,
+                                ),
+                              ),
+                            ),
+
+                            SizedBox(width: 20),
+                            InkWell(
+                              onTap: () {
+                                NotesData.list.removeAt(index);
+                                setState(() {});
+                                Navigator.pop(context);
+                              },
+                              child: Text(
+                                "Delete",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 23,
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                  child: NoteCardWidget(index: index),
+                ),
               ),
             ),
           ],

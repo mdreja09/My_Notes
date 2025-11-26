@@ -15,7 +15,7 @@ class Splashscreen extends StatefulWidget {
 class _SplashscreenState extends State<Splashscreen> {
   autoNavigate () async{
     //log("oooooo");
-    await Future.delayed(Duration(seconds: 4));
+    await Future.delayed(Duration(seconds: 1));
     Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => Bottomnavigation(),));
   }
   @override
@@ -30,9 +30,9 @@ class _SplashscreenState extends State<Splashscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       //appBar: AppBar(),
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.white,
       body: Center(
-        child: Image.asset("assets/notes.jpg"),
+        child: Image.asset("assets/notespic.png"),
       ),
 
     );
