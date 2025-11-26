@@ -6,23 +6,29 @@ import '../../../Database/notes.dart';
 import '../../Noteview/view.dart';
 
 class NoteCardWidget extends StatelessWidget {
-  const NoteCardWidget({
-    super.key, required this.index,
-  });
-  final int index ;
+  const NoteCardWidget({super.key, required this.index});
+  final int index;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         log("OKKKKKKKKKK");
-        Navigator.push(context, MaterialPageRoute(
-            builder: (context)=>NoteViewScreen(
-              title: '"${NotesData.list[index]["title"]}",'
-                  '', details: '"${NotesData.list[index]["title"]}",'
-                '"${NotesData.list[index]["details"]}",'
-                '', created_at: '"${NotesData.list[index]["details"]}"',)));
-
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => NoteViewScreen(
+              title:
+                  '"${NotesData.list[index]["title"]}",'
+                  '',
+              details:
+                  '"${NotesData.list[index]["title"]}",'
+                  '"${NotesData.list[index]["details"]}",'
+                  '',
+              created_at: '"${NotesData.list[index]["details"]}"',
+            ),
+          ),
+        );
       },
       child: Card(
         color: Colors.white,
@@ -37,26 +43,17 @@ class NoteCardWidget extends StatelessWidget {
                 children: [
                   Text(
                     "${NotesData.list[index]["title"]}",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
                   ),
                   Text(
                     "${NotesData.list[index]["created_at"]}",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
                   ),
                 ],
               ),
               Text(
                 "${NotesData.list[index]["details"]} ",
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 17,
-                ),
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
               ),
             ],
           ),

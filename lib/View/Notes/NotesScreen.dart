@@ -148,6 +148,11 @@ class _NotesScreenState extends State<NotesScreen> {
                             SizedBox(width: 20),
                             InkWell(
                               onTap: () {
+                                NotesData.trashList.add(
+                                  NotesData.list[index],
+                                );
+
+
                                 NotesData.list.removeAt(index);
                                 setState(() {});
                                 Navigator.pop(context);
@@ -175,6 +180,7 @@ class _NotesScreenState extends State<NotesScreen> {
 
       floatingActionButton: InkWell(
         onTap: () {
+
           log("=========");
           Navigator.push(
             context,
