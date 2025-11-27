@@ -5,7 +5,7 @@ class NoteViewScreen extends StatelessWidget {
     super.key,
     required this.title,
     required this.details,
-    required this.created_at,
+    required this.created_at, required int i,
   });
 
   final String title;

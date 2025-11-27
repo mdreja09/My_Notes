@@ -25,7 +25,7 @@ class NoteCardWidget extends StatelessWidget {
                   '"${NotesData.list[index]["title"]}",'
                   '"${NotesData.list[index]["details"]}",'
                   '',
-              created_at: '"${NotesData.list[index]["details"]}"',
+              created_at: '"${NotesData.list[index]["details"]}"', i: index,
             ),
           ),
         );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Noteview/view.dart';
+
 class Trustscreen extends StatefulWidget {
   const Trustscreen({super.key});
 
@@ -20,18 +22,10 @@ class _DeletescreenState extends State<Trustscreen> {
           style: TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
         ),
       ),
-      body:  Container(
-        height: double.infinity,
-        width: double.infinity,
-        margin: EdgeInsets.symmetric(horizontal: 16,vertical: 16),
-        child: Column(
-          children: [
+      body: ListView.builder(itemBuilder: (context,i ) {
+        return NoteViewScreen( i :i, title: '', details: '', created_at: '', );
 
-
-          ],
-        ),
-
-      ),
-    );
+      },
+    ));
   }
 }
